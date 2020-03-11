@@ -55,8 +55,36 @@ public int turn(int counter) {
 }
 
 
+/**
+ * Sets the occupant to the specified value.
+ * 
+ * @param player
+ *            the occupant of the square (0=empty, 1=player1, 2=player2)
+ * @throws IllegalArgumentException
+ *             if the occupant is not 0, 1, or 2
+ */
+public void setPlayer(int player) {
+	if (player < 0 || player > 2)
+		throw new IllegalArgumentException("Invalid occupant: " + player
+				+ ", must be 0, 1, or 2");
+	this.player = player;
+	setToolTipText("Player " + player);
+	repaint();
+}
+
+
+/**
+ * Gets the current occupant of this square
+ * 
+ * @return the current occupant of this square (0=empty, 1=player1,
+ *         2=player2)
+ */
+public int getPlayer() {
+	return player;
+}
+
  
-public void dropCoin(int coin,int columnNumber) {
+public void dropCoin(int columnNumber) {
 	boolean full=false;
 	switch(columnNumber){
 		case 1: 
