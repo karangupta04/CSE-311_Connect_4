@@ -3,7 +3,7 @@ public class Model {
 
 	private final int row=6;//
 	private final int column= 7;
-	private final int[][] grid=new int[row-1][column-1];
+	public final int[][] grid=new int[row-1][column-1];
 	private int player;
 	private int counter;//counts the number of turns
 	private int previous= grid[0][0];
@@ -81,6 +81,9 @@ public void setPlayer(int player) {
  */
 public int getPlayer() {
 	return player;
+}
+public int[][] getGrid(){
+	return grid;
 }
 
  
